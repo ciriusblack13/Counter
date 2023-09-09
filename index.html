@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set, viewport, and Open Graph -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Tag Open Graph -->
     <meta
       property="og:title"
       content="Counter by José Antonio - Web Developer"
@@ -16,6 +15,8 @@
     <meta property="og:type" content="website" />
 
     <title>Counter</title>
+
+    <!-- Favicon link -->
     <link
       rel="icon"
       alt="Counter logo"
@@ -23,6 +24,7 @@
       href="./assets/img/favicon.png"
     />
 
+    <!-- Tailwind CSS stylesheet -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -33,12 +35,13 @@
     <div class="flex flex-col justify-center items-center font-sans">
       <!-- SET GOAL -->
       <div
-        class="goal-container container bg-white rounded-lg shadow-md p-8 text-center w-4/5 max-w-md"
+        id="goal-container"
+        class="container bg-white rounded-lg shadow-md p-8 text-center w-4/5 max-w-md"
       >
         <h1 class="text-2xl font-bold text-gray-700 mb-6">Set Your Goal</h1>
         <div class="top mb-6">
           <input
-            type="number"
+            type="integer"
             id="goal-input"
             class="w-16 p-2 border rounded-md no-underline"
             placeholder="Goal"
@@ -54,7 +57,8 @@
 
       <!-- COUNTER -->
       <div
-        class="counter-container container bg-white rounded-lg shadow-md p-8 text-center w-4/5 max-w-md hidden"
+        id="counter-container"
+        class="container bg-white rounded-lg shadow-md p-8 text-center w-4/5 max-w-md hidden"
       >
         <p
           id="win"
@@ -62,39 +66,12 @@
         >
           You did it, congratulations!
         </p>
-        <h1 id="number" class="text-9xl font-bold text-gray-700 mt-2">0</h1>
         <p class="counter mb-6"></p>
-        <div class="btns flex justify-between">
-          <button
-            class="decrease flex flex-col items-center p-3 bg-gray-100 hover:bg-gray-200 font-bold text-purple-500 w-full rounded"
-          >
-            <ion-icon
-              name="remove-outline"
-              class="text-xl text-black mb-1"
-            ></ion-icon>
-            <span class="text-sm">Subtract</span>
-          </button>
-          <button
-            class="reset flex flex-col items-center p-3 bg-gray-100 hover:bg-gray-200 font-bold text-purple-500 w-full rounded ml-2"
-          >
-            <ion-icon
-              name="refresh-outline"
-              class="text-xl text-black mb-1"
-            ></ion-icon>
-            <span class="text-sm">Reset</span>
-          </button>
-          <button
-            class="increase flex flex-col items-center p-3 bg-gray-100 hover:bg-gray-200 font-bold text-purple-500 w-full rounded ml-2"
-          >
-            <ion-icon
-              name="add-outline"
-              class="text-xl text-black mb-1"
-            ></ion-icon>
-            <span class="text-sm">Add</span>
-          </button>
+        <div class="btns flex justify-between" id="btns">
         </div>
       </div>
 
+      <!-- GOAL BUTTON (Hidden by default) -->
       <button
         id="goal-button"
         class="new-goal flex justify-center items-center p-3 bg-red-500 hover:bg-red-600 rounded text-white mt-6 hidden"
@@ -104,13 +81,14 @@
       </button>
     </div>
 
+    <!-- FOOTER -->
     <footer class="bg-gray-200 p-4 text-center absolute bottom-0 w-full">
       <p class="text-gray-600">
-        © 2023 Interactive Counter App. Tutti i diritti riservati.
+        © 2023 Interactive Counter App. All rights reserved.
       </p>
     </footer>
 
-    <!-- IONICON LINK  -->
+    <!-- IONICON LINK -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -120,7 +98,7 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
 
-    <!-- PERSONAL SCRIPT -->
+    <!-- PERSONAL JS -->
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
