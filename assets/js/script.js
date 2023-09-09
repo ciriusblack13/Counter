@@ -148,7 +148,6 @@ setButton.addEventListener("click", () => {
     counter.textContent = `${count} of ${goal}`;
   }
   winPhrase.classList.add("hidden");
-  number.style.color = "black";
   changeDisplay();
 });
 
